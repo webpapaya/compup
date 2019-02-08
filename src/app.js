@@ -1,14 +1,24 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import UserSignUp from './container/user-sign-up';
-import UserSignIn from './container/user-sign-in';
-import MoneyTransferCreate from './container/money-transaction-create';
-import MoneyTransactionList from './container/money-transaction-list';
-import MoneyTransactionReports from './container/money-transaction-reports';
-import MoneyTransactionFilter from './container/money-transaction-filter';
-import UserUpdate from './container/user-update';
 
-import Navigation from './container/navigation';
+const lazy = (importFn) => {
+	const Component = React.lazy(importFn);
+	return () => (
+		<React.Suspense fallback={<div>loading</div>}>
+			<Component />
+		</React.Suspense>
+	)
+}
+
+const UserSignUp = lazy(() => import('./container/user-sign-up'));
+const UserSignIn = lazy(() => import('./container/user-sign-in'));
+const MoneyTransferCreate = lazy(() => import('./container/money-transaction-create'));
+const MoneyTransactionList = lazy(() => import('./container/money-transaction-list'));
+const MoneyTransactionReports = lazy(() => import('./container/money-transaction-reports'));
+const MoneyTransactionFilter = lazy(() => import('./container/money-transaction-filter'));
+const UserUpdate = lazy(() => import('./container/user-update'));
+const Navigation = lazy(() => import('./container/navigation'));
+
 import WhenUserAuthentication from './container/when-user-authenticated';
 import CenteredPanel from './components/centered-panel';
 
