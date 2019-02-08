@@ -1,14 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-
-const lazy = (importFn) => {
-	const Component = React.lazy(importFn);
-	return () => (
-		<React.Suspense fallback={<div>loading</div>}>
-			<Component />
-		</React.Suspense>
-	)
-}
+import lazy from './lazy';
 
 const UserSignUp = lazy(() => import('./container/user-sign-up'));
 const UserSignIn = lazy(() => import('./container/user-sign-in'));
@@ -18,8 +10,8 @@ const MoneyTransactionReports = lazy(() => import('./container/money-transaction
 const MoneyTransactionFilter = lazy(() => import('./container/money-transaction-filter'));
 const UserUpdate = lazy(() => import('./container/user-update'));
 const Navigation = lazy(() => import('./container/navigation'));
+const WhenUserAuthentication = lazy(() => import('./container/when-user-authenticated'));
 
-import WhenUserAuthentication from './container/when-user-authenticated';
 import CenteredPanel from './components/centered-panel';
 
 const MoneyTransactionPage = () => (
