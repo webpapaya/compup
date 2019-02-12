@@ -1,6 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router';
+import App from './app';
 import lazy from './lazy';
+import store from './store';
 
 const registerContainer = (name, importFn) => {
 	class ReactWrapper extends HTMLElement {
@@ -23,3 +27,13 @@ registerContainer('my-service--money-transaction-filter', () => import('./contai
 registerContainer('my-service--user-update', () => import('./container/user-update'));
 registerContainer('my-service--navigation', () => import('./container/navigation'));
 registerContainer('my-service--when-user-authenticated', () => import('./container/when-user-authenticated'));
+
+
+const Container = lazy(() => import('./container/user-sign-up'));
+render(
+	<Provider store={store}>
+		<Container />
+		
+	</Provider>,
+	document.getElementById('app'),
+);

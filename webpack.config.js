@@ -15,10 +15,16 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: [
-					{ loader: "react-web-component-style-loader" },
-					"css-loader"
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						query: {
+							modules: true,
+							localIdentName: '[name]__[local]___[hash:base64:5]'
+						}
+					}
 				]
-			}
+			  },
 	  ]
 	},
 	devServer: {
@@ -27,12 +33,23 @@ module.exports = {
 	output: {
 		chunkFilename: '[name].js'
 	},
+	optimization: {
+		splitChunks: {
+		  cacheGroups: {
+			styles: {
+			  name: 'styles',
+			  test: /\.css$/,
+			  chunks: 'all',
+			  enforce: true
+			}
+		  }
+		}
+	  },
 	plugins: [
-		new CleanWebpackPlugin(['dist']),
 		new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+			filename: "[name].css",
 		}),
+		new CleanWebpackPlugin(['dist']),
 		new HtmlWebPackPlugin({
 			template: "./src/index.html",
 			filename: "./index.html"
