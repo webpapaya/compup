@@ -7,7 +7,6 @@ const registerContainer = (name, importFn) => {
 		connectedCallback() {
 			const mountPoint = document.createElement('div'); 
 			this.attachShadow({ mode: 'closed' }).appendChild(mountPoint);
-			
 			const Container = lazy(importFn);
 			render(<Container />, mountPoint);
 		}
