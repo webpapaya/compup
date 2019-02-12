@@ -1,4 +1,4 @@
-:local(.button) {
+:host(.button) {
   /* button reset */
   border: none;
   margin: 0;
@@ -36,69 +36,69 @@
   align-items: center;
 }
 
-:local(.button.block) {
+:host(.button.block) {
   display: flex;
   width: 100%;
 }
 
-:local(.not-allowed) {
+:host(.not-allowed) {
   cursor: not-allowed;
 }
 
-:local(.button:active), :local(.button:focus) {
+:host(.button:active), :host(.button:focus) {
   outline: none;
 }
 
 /* primary color */ 
-:local(.color-primary) {
+:host(.color-primary) {
   color: #ffffff;
   background: #2268FF;
 }
 
-:local(.color-primary:hover) {
+:host(.color-primary:hover) {
   background: #4C85FF;
 }
 
-:local(.color-primary:focus), :local(.color-primary:active) {
+:host(.color-primary:focus), :host(.color-primary:active) {
   background: #0A57FB;
 }
 
-:local(.color-primary.disabled) {
+:host(.color-primary.disabled) {
   background: rgba(35, 104, 255, 0.4)
 }
 
 /* success color */ 
-:local(.color-success) {
+:host(.color-success) {
   color: #ffffff;
   background: #16D563;
 }
 
-:local(.color-success:hover) {
+:host(.color-success:hover) {
   background: #3ADF7D;
 }
 
-:local(.color-success:focus), :local(.color-success:active) {
+:host(.color-success:focus), :host(.color-success:active) {
   background: #00BF4D;
 }
 
-:local(.color-success.disabled) {
+:host(.color-success.disabled) {
   background: rgb(198, 238, 214);
 }
 
 /* danger color */ 
-:local(.color-danger) {
+:host(.color-danger) {
   color: #ffffff;
   background: #FF7D09;
 }
 
-:local(.color-danger:hover) {
+:host(.color-danger:hover) {
   background: #FF9638;
 }
 
-:local(.color-danger:focus), :local(.color-danger:active) {
+:host(.color-danger:focus), :host(.color-danger:active) {
   background: #FF7800;
 }
 
-:local(.color-danger.disabled) {
+:host(.color-danger.disabled) {
   background: rgb(255, 218, 190);
 }

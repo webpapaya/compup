@@ -12,6 +12,5 @@ const mapDispatchToProps = (dispatch, props) => ({
 });
 
 export default pipe(
-	withRouter,
 	connect(null, mapDispatchToProps),
 )(Organism);

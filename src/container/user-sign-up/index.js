@@ -7,10 +7,9 @@ import pipe from '../../lib/pipe';
 const mapDispatchToProps = (dispatch, props) => ({
 	onSubmit: body => Promise.resolve()
 		.then(() => dispatch(UserActions.signUpAndIn(body)))
-		.then(() => props.history.push('/money-transactions')),
+		// .then(() => props.history.push('/money-transactions')),
 });
 
 export default pipe(
-	withRouter,
 	connect(null, mapDispatchToProps),
 )(Organism);

@@ -15,7 +15,6 @@ export default isForm(({ form }) => (
 			<Button type="submit" disabled={form.isSubmitting} block>
 				{ 'Sign up' }
 			</Button>
-			<Link to="user-sign-in">Sign in</Link>
 		</nav>
 	</Form>
 ));

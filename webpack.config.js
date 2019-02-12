@@ -31,5 +31,8 @@ module.exports = {
 	devServer: {
 	  historyApiFallback: true,
 	},
+	output: {
+		chunkFilename: 'serviceA/[name].js'
+	},
 	plugins: [htmlPlugin]
   };
