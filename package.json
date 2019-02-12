@@ -16,6 +16,7 @@
 	"dependencies": {
 		"axios": "^0.18.0",
 		"camelcase-keys-deep": "^0.1.0",
+		"construct-style-sheets-polyfill": "^1.0.1",
 		"datenkrake": "^0.0.3",
 		"decamelize": "^2.0.0",
 		"decamelize-keys-deep": "^0.1.1",

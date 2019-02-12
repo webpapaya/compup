@@ -1,17 +1,21 @@
+import 'construct-style-sheets-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router';
-import App from './app';
 import lazy from './lazy';
-import store from './store';
 
-const registerContainer = (name, importFn) => {
+const sheet = new CSSStyleSheet();
+const stylesheetLoaded = sheet.replace('@import url("styles.css")');
+const importCSS = () => stylesheetLoaded;
+
+const registerContainer = (name, importJS) => {
 	class ReactWrapper extends HTMLElement {
 		connectedCallback() {
 			const mountPoint = document.createElement('div'); 
-			this.attachShadow({ mode: 'closed' }).appendChild(mountPoint);
-			const Container = lazy(importFn);
+			const shadow = this.attachShadow({ mode: 'closed' });
+			shadow.adoptedStyleSheets = [sheet];
+			shadow.appendChild(mountPoint);
+
+			const Container = lazy({ importJS, importCSS });
 			render(<Container />, mountPoint);
 		}
 	}
@@ -28,12 +32,3 @@ registerContainer('my-service--user-update', () => import('./container/user-upda
 registerContainer('my-service--navigation', () => import('./container/navigation'));
 registerContainer('my-service--when-user-authenticated', () => import('./container/when-user-authenticated'));
 
-
-const Container = lazy(() => import('./container/user-sign-up'));
-render(
-	<Provider store={store}>
-		<Container />
-		
-	</Provider>,
-	document.getElementById('app'),
-);
