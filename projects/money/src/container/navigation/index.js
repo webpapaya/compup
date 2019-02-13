@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import UserActions from '../../domain/users/actions';
 import Organism from './organism';
-import pipe from '../../lib/pipe';
+import {compose} from 'ramda';
 
 const mapDispatchToProps = (dispatch, props) => ({
 	onSettingsRedirect: () => Promise.resolve()
@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch, props) => ({
 		.then(() => props.history.push('/')),
 });
 
-export default pipe(
+export default compose(
 	withRouter,
 	connect(null, mapDispatchToProps),
 )(Organism);

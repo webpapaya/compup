@@ -5,7 +5,7 @@ import {
 } from 'datenkrake';
 import UserActions from '../../domain/users/actions';
 import Organism from './organism';
-import pipe from '../../lib/pipe';
+import {compose} from 'ramda';
 import hasSideEffect from '../../lib/has-side-effect';
 
 const mapStateToProps = state => ({
@@ -28,7 +28,7 @@ const mergeProps = (state, actions) => {
 	};
 };
 
-export default pipe(
+export default compose(
 	withRouter,
 	connect(mapStateToProps, mapDispatchToProps, mergeProps),
 	hasSideEffect(),

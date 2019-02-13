@@ -5,7 +5,7 @@ import {
 } from 'datenkrake';
 import { toQueryParams } from 'datenkrake/src/adapters/postgrest';
 import Organism from './organism';
-import pipe from '../../lib/pipe';
+import {compose} from 'ramda';
 
 const parseOrder = (string) => {
 	const [property, direction] = string.split('.');
@@ -23,7 +23,7 @@ const mapDispatchToProps = (_, props) => ({
 	},
 });
 
-export default pipe(
+export default compose(
 	withRouter,
 	connect(null, mapDispatchToProps),
 )(Organism);

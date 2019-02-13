@@ -4,7 +4,7 @@ import { fromQueryParams } from 'datenkrake/src/adapters/postgrest';
 import MoneyTransactionActions from '../../domain/money-transactions/actions';
 import UserActions from '../../domain/users/actions';
 import Organism from './organism';
-import pipe from '../../lib/pipe';
+import {compose} from 'ramda';
 import hasSideEffect from '../../lib/has-side-effect';
 
 const mapStateToProps = (state, props) => ({
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch, props) => ({
 		dispatch(MoneyTransactionActions.update(query, record)),
 });
 
-export default pipe(
+export default compose(
 	connect(mapStateToProps, mapDispatchToProps),
 	hasSideEffect(),
 )(Organism);

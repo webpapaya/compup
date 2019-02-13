@@ -4,7 +4,7 @@ import {
 } from 'datenkrake';
 import MoneyTransactionReportsActions from '../../domain/money-transaction-reports/actions';
 import Organism from './organism';
-import pipe from '../../lib/pipe';
+import {compose} from 'ramda';
 import hasSideEffect from '../../lib/has-side-effect';
 
 const mapStateToProps = (state) => {
@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => ({
 	})))),
 });
 
-export default pipe(
+export default compose(
 	connect(mapStateToProps, mapDispatchToProps),
 	hasSideEffect({ props: ['reloadMoneyTransactionReports'] }),
 )(Organism);
