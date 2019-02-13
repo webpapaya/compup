@@ -6,6 +6,7 @@
 	"scripts": {
 		"lint": "eslint src",
 		"start": "start-storybook",
+		"start:dev": "yarn build --watch",
 		"build": "npx babel src --out-dir lib --copy-files",
 		"build-storybook": "build-storybook",
 		"postinstall": "yarn build"
