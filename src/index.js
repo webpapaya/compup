@@ -5,17 +5,24 @@ import lazy from './lazy';
 
 const sheet = new CSSStyleSheet();
 const stylesheetLoaded = sheet.replace('@import url("styles.css")');
-const importCSS = () => stylesheetLoaded;
+const importCSS = (shadow) => {
+	shadow.adoptedStyleSheets = [sheet];
+	return stylesheetLoaded;
+};
 
 const registerContainer = (name, importJS) => {
+
 	class ReactWrapper extends HTMLElement {
 		connectedCallback() {
+			const shadow = this.attachShadow({ mode: 'open' });
+			const importFn = () => Promise.resolve()
+				.then(() => importCSS(shadow))
+				.then(() => importJS());
+
 			const mountPoint = document.createElement('div'); 
-			const shadow = this.attachShadow({ mode: 'closed' });
-			shadow.adoptedStyleSheets = [sheet];
 			shadow.appendChild(mountPoint);
 
-			const Container = lazy({ importJS, importCSS });
+			const Container = lazy(importFn);
 			render(<Container />, mountPoint);
 		}
 	}

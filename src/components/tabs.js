@@ -15,6 +15,7 @@ export class Tabs extends React.Component {
 	}
 
 	setTab = (selectedIndex) => {
+		console.log('tab clicked')
 		this.setState({ selectedIndex });
 	}
 
