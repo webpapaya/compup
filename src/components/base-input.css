@@ -24,6 +24,7 @@
 	outline: none;
 	transition: all 200ms;
 	border-bottom: 2px solid rgb(161, 191, 255);
+	border-radius: 0;
 }
 
 :local(.input.focused) {

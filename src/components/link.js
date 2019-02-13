@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import linkStyles from './link.css';
 import buttonStyles from './button.css';
+import linkStyles from './link.css';
 import className from '../lib/class-name';
 
 const Component = ({
