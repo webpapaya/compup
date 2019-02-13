@@ -1,5 +1,6 @@
 import 'construct-style-sheets-polyfill';
 import React from 'react';
+import retargetEvents from 'react-shadow-dom-retarget-events';
 import { render } from 'react-dom';
 import lazy from './lazy';
 
@@ -11,7 +12,6 @@ const importCSS = (shadow) => {
 };
 
 const registerContainer = (name, importJS) => {
-
 	class ReactWrapper extends HTMLElement {
 		connectedCallback() {
 			const shadow = this.attachShadow({ mode: 'open' });
@@ -24,6 +24,7 @@ const registerContainer = (name, importJS) => {
 
 			const Container = lazy(importFn);
 			render(<Container />, mountPoint);
+			retargetEvents(shadow)
 		}
 	}
 	customElements.define(name, ReactWrapper);

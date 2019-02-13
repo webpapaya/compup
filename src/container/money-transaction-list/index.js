@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
 import { q, filterByQuery } from 'datenkrake';
 import { fromQueryParams } from 'datenkrake/src/adapters/postgrest';
 import MoneyTransactionActions from '../../domain/money-transactions/actions';
@@ -32,7 +31,6 @@ const mapDispatchToProps = (dispatch, props) => ({
 });
 
 export default pipe(
-	withRouter,
 	connect(mapStateToProps, mapDispatchToProps),
 	hasSideEffect(),
 )(Organism);
