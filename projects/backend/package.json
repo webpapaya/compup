@@ -1,0 +1,13 @@
+{
+	"name": "backend",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "docker-compose up -d && yarn migrate",
+		"stop": "docker-compose down",
+		"migrate": "docker-compose run flyway -url=jdbc:postgresql://db:5432/compup -user=dbuser -password=password migrate && docker-compose restart server"
+	},
+	"author": "",
+	"license": "ISC"
+}
