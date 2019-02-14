@@ -96,7 +96,7 @@ const buildInput = ({ reducer = defaultReducer }, InputComponent) => class Input
 		handleChange = (evt) => {
 			if (this.props.disabled) { return; }
 
-			evt.persist(); // TODO: remove
+			evt.isPersistent = function(){ return true }; // TODO: remove
 			evt.target.value = reducer(evt.target.value); // eslint-disable-line no-param-reassign
 			this.safeCallProp('setFormValue', this.props.name, evt.target.value);
 			this.handleEvent(evt, 'onChange', state => ({ ...state, touched: true }));

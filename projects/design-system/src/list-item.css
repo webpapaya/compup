@@ -4,6 +4,7 @@
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 8px;
+	list-style: none;
 }
 
 :local(.row:nth-child(2n+1)) {
