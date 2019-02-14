@@ -1,4 +1,7 @@
 {
     "private": true,
-    "workspaces": ["projects/**"]
+    "workspaces": ["projects/**"],
+    "scripts": {
+        "start": "concurrently 'yarn workspace design-system run start' 'yarn workspace money run start'"
+    }
 }

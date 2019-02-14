@@ -7,6 +7,7 @@
 		"test": "jest",
 		"start": "docker-compose up -d && concurrently -n webpack,storybook 'yarn start:dev' 'start-storybook'",
 		"start:dev": "webpack-dev-server --mode development",
+		"start:uidev": "start-storybook",
 		"export:components": "node scripts/export-webcomponents.js > src/web-components.js",
 		"lint": "eslint src",
 		"build": "webpack --mode production",
