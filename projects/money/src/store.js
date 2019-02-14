@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { createMemoizeMiddleware } from './lib/memoize-actions';
+import { createMemoizeMiddleware } from 'compup/lib/memoize-actions';
 
 const rootReducer = combineReducers({
 	/* eslint-disable global-require */

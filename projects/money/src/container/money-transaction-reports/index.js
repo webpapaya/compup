@@ -5,7 +5,7 @@ import {
 import MoneyTransactionReportsActions from '../../domain/money-transaction-reports/actions';
 import Organism from './organism';
 import {compose} from 'ramda';
-import hasSideEffect from '../../lib/has-side-effect';
+import hasSideEffect from 'compup/lib/has-side-effect';
 
 const mapStateToProps = (state) => {
 	const reports = state.moneyTransactionReports;

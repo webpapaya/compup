@@ -11,3 +11,7 @@ Issues so far
     - still need to figure out a solution...
 - Routing for app shell 
     - need to find a routing library
+
+
+# TODO:
+- Make regeneration webcomponent regeneration task generic

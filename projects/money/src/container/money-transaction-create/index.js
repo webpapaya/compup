@@ -6,7 +6,7 @@ import MoneyTransactionActions from '../../domain/money-transactions/actions';
 import UserActions from '../../domain/users/actions';
 import Organism from './organism';
 import {compose} from 'ramda';
-import hasSideEffect from '../../lib/has-side-effect';
+import hasSideEffect from 'compup/lib/has-side-effect';
 
 const mapStateToProps = state => ({
 	users: filterByQuery(q(where({ id: not(eq(state.userAuthentication.id)) })), state.users),

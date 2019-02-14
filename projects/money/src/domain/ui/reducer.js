@@ -1,4 +1,4 @@
-import { cache } from '../../lib/memoize-actions';
+import { cache } from 'compup/lib/memoize-actions';
 import MoneyTransactionReportActions from '../money-transaction-reports/actions';
 
 const INITIAL_STATE = {
