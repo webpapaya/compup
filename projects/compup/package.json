@@ -13,7 +13,8 @@
 	"license": "ISC",
 	"dependencies": {
 		"construct-style-sheets-polyfill": "^1.0.1",
-		"react-shadow-dom-retarget-events": "^1.0.8"
+		"react-shadow-dom-retarget-events": "^1.0.8",
+		"redux-memoize": "^2.3.1"
 	},
 	"peerDependencies": {
 		"react": "^16.6.3",
@@ -29,6 +30,7 @@
 		"@babel/preset-react": "^7.0.0",
 		"@babel/preset-stage-0": "^7.0.0",
 		"eslint": "^5.12.0",
-		"eslint-config-react-trigo": "^6.3.1"
+		"eslint-config-react-trigo": "^6.3.1",
+		"prop-types": "^15.7.2"
 	}
 }
