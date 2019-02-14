@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import retargetEvents from 'react-shadow-dom-retarget-events';
+import retargetEvents from './retarget-react-events';
 import { render } from 'react-dom';
 import importCSS from './import-css';
 
