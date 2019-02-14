@@ -10,6 +10,7 @@ export default {
   'money-transaction-list': () => import('./container/money-transaction-list'),
   'money-transaction-reports': () => import('./container/money-transaction-reports'),
   'navigation': () => import('./container/navigation'),
+  'user-list': () => import('./container/user-list'),
   'user-sign-in': () => import('./container/user-sign-in'),
   'user-sign-up': () => import('./container/user-sign-up'),
   'user-update': () => import('./container/user-update'),
