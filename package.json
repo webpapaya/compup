@@ -2,8 +2,7 @@
     "private": true,
     "workspaces": ["projects/**"],
     "scripts": {
-        "start": "yarn workspace backend start && concurrently 'yarn workspace design-system start' 'yarn workspace user start'",
+        "start": "yarn workspace backend start && concurrently 'yarn workspace design-system start' 'yarn workspace user start' 'yarn workspace events start'",
         "stop": "yarn workspace backend stop"
-
     }
 }
