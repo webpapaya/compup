@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	sideEffect: () => dispatch(UserActions.where()),
+	onUserSelect: (user) => console.log(user)
 });
 
 export default compose(

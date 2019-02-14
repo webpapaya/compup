@@ -8,5 +8,5 @@ const USERS = [
 	{ id: 3, name: 'Martha' },
 ];
 
-storiesOf('UserList', module)
+storiesOf('EventList', module)
 	.add('default', () => <Organism users={USERS} />);
