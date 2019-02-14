@@ -2,7 +2,7 @@ import registerReactAsWebComponet from 'compup/lib/register-react-as-web-compone
 import store from './store';
 import WEB_COMPONENTS from './web-components';
 
-const COMPONENT_PREFIX = 'events-service';
+const COMPONENT_PREFIX = 'events';
 
 Object.keys(WEB_COMPONENTS).forEach((key) => {
 	const name = `${COMPONENT_PREFIX}--${key}`;
