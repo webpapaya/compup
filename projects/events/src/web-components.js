@@ -5,7 +5,6 @@
  */
 
 export default {
-  'event-create': () => import('./container/event-create'),
-  'event-list': () => import('./container/event-list')
-}
-
+	'event-create': () => import('./container/event-create'),
+	'event-list': () => import('./container/event-list'),
+};

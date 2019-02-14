@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import retargetEvents from './retarget-react-events';
 import { render } from 'react-dom';
+import retargetEvents from './retarget-react-events';
 import importCSS from './import-css';
 
 const lazy = (importFn, store) => {

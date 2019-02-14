@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
+import { compose } from 'ramda';
+import hasSideEffect from 'compup/lib/has-side-effect';
 import EventActions from '../../domain/events/actions';
 import Organism from './organism';
-import {compose} from 'ramda';
-import hasSideEffect from 'compup/lib/has-side-effect';
 
 const mapStateToProps = state => ({
-	events: state.events
+	events: state.events,
 });
 
 const mapDispatchToProps = dispatch => ({

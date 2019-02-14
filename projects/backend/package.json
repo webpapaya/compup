@@ -6,7 +6,8 @@
 	"scripts": {
 		"start": "docker-compose up -d && yarn migrate",
 		"stop": "docker-compose down",
-		"migrate": "docker-compose run flyway -url=jdbc:postgresql://db:5432/compup -user=dbuser -password=password migrate && docker-compose restart server"
+		"migrate": "docker-compose run flyway -url=jdbc:postgresql://db:5432/compup -user=dbuser -password=password migrate && docker-compose restart server",
+		"lint": "true"
 	},
 	"author": "",
 	"license": "ISC"
