@@ -6,6 +6,7 @@ import importCSS from './import-css';
 
 const lazy = (importFn, store) => {
 	const Component = React.lazy(importFn);
+	
 	return props => (
 		<Provider store={store}>
 			<React.Suspense fallback={<div>loading</div>}>
@@ -20,13 +21,14 @@ const registerReactAsWebComponent = ({ name, importComponent, store }) => {
 		connectedCallback() {
 			const shadow = this.attachShadow({ mode: 'open' });
 			const importFn = () => Promise.resolve()
-				.then(() => importCSS({ node: shadow, path: 'styles.css' }))
+				// .then(() => importCSS({ node: shadow, path: 'styles.css' }))
 				.then(() => importComponent());
 
 			const mountPoint = document.createElement('div');
 			shadow.appendChild(mountPoint);
 
 			const Container = lazy(importFn, store);
+
 			render(<Container />, mountPoint);
 			retargetEvents(shadow);
 		}

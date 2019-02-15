@@ -6,7 +6,8 @@
     "scripts": {
         "start": "wsrun --exclude-missing start",
         "start:dev": "wsrun --exclude-missing start:dev",
-        "start:ui": "wsrun --exclude-missing start:ui"
+        "start:ui": "wsrun --exclude-missing start:ui",
+        "export:components": "wsrun --exclude-missing export:components"
     },
     "dependencies": {
         "wsrun": "^3.6.4"
