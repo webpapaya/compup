@@ -5,6 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "docker-compose up -d && yarn migrate",
+		"start:dev": "yarn start",
+		"start:ui": "true",
 		"stop": "docker-compose down",
 		"migrate": "docker-compose run flyway -url=jdbc:postgresql://db:5432/compup -user=dbuser -password=password migrate && docker-compose restart server",
 		"lint": "true"

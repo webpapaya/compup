@@ -6,6 +6,8 @@
 	"scripts": {
 		"lint": "eslint src",
 		"start": "yarn build --watch",
+		"start:dev": "yarn start",
+		"start:ui": "yarn start",
 		"build": "npx babel src --out-dir lib --copy-files",
 		"postinstall": "yarn build"
 	},

@@ -1,8 +1,14 @@
 {
     "private": true,
-    "workspaces": ["projects/**"],
+    "workspaces": [
+        "projects/**"
+    ],
     "scripts": {
-        "start": "yarn workspace backend start && concurrently 'yarn workspace design-system start' 'yarn workspace user start' 'yarn workspace events start'",
-        "stop": "yarn workspace backend stop"
+        "start": "wsrun --exclude-missing start",
+        "start:dev": "wsrun --exclude-missing start:dev",
+        "start:ui": "wsrun --exclude-missing start:ui"
+    },
+    "dependencies": {
+        "wsrun": "^3.6.4"
     }
 }

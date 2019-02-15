@@ -5,9 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "jest",
-		"start": "concurrently -n webpack,storybook 'yarn start:dev' 'start-storybook'",
-		"start:dev": "webpack-dev-server --mode development --port 8081",
-		"start:uidev": "start-storybook",
+		"start": "concurrently 'yarn start:dev' 'yarn start:ui'",
+		"start:dev": "webpack-dev-server --mode production --port 8081",
+		"start:ui": "start-storybook",
 		"export:components": "node scripts/export-webcomponents.js > src/web-components.js",
 		"lint": "eslint src",
 		"build": "webpack --mode production",
