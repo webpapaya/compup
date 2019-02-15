@@ -1,7 +1,7 @@
 import registerReactAsWebComponet from 'compup/lib/register-react-as-web-component';
 import store from './store';
 import WEB_COMPONENTS from './web-components';
-const COMPONENT_PREFIX = 'user';
+import {name as COMPONENT_PREFIX} from '../package.json';
 
 Object.keys(WEB_COMPONENTS).forEach((key) => {
 	const name = `${COMPONENT_PREFIX}--${key}`;

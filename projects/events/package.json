@@ -6,7 +6,7 @@
 	"scripts": {
 		"test": "jest",
 		"start": "concurrently 'yarn start:dev' 'yarn start:ui'",
-		"start:dev": "webpack-dev-server --mode production --port 8082",
+		"start:dev": "webpack-dev-server --mode development --port 8082",
 		"start:ui": "start-storybook",
 		"export:components": "node scripts/export-webcomponents.js > src/web-components.js",
 		"lint": "eslint src",
