@@ -2,8 +2,8 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createMemoizeMiddleware } from 'compup/lib/memoize-actions';
-import  createMessageBusMiddleware from 'compup/lib/create-message-bus-middleware';
-import { name as SERVICE_NAME } from '../package.json'
+import createMessageBusMiddleware from 'compup/lib/create-message-bus-middleware';
+import { name as SERVICE_NAME } from '../package.json';
 
 
 const rootReducer = combineReducers({

@@ -8,7 +8,6 @@ import Component0 from './container/user-create';
 import Component1 from './container/user-list';
 
 export default {
-  'user-create': () => ({ default: Component0 }),
-  'user-list': () => ({ default: Component1 })
+	'user-create': () => ({ default: Component0 }),
+	'user-list': () => ({ default: Component1 }),
 };
-

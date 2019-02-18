@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
+import { compose } from 'ramda';
+import hasSideEffect from 'compup/lib/has-side-effect';
 import UserActions from '../../domain/users/actions';
 import Organism from './organism';
-import {compose} from 'ramda';
-import hasSideEffect from 'compup/lib/has-side-effect';
 
 const mapStateToProps = state => ({
-	users: state.users
+	users: state.users,
 });
 
 const mapDispatchToProps = dispatch => ({
 	sideEffect: () => dispatch(UserActions.where()),
-	onUserSelect: (payload) => dispatch({ type: 'user/selected', meta: {}, payload }),
+	onUserSelect: payload => dispatch({ type: 'user/selected', meta: {}, payload }),
 });
 
 export default compose(

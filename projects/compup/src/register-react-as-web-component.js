@@ -6,7 +6,7 @@ import importCSS from './import-css';
 
 const lazy = (importFn, store) => {
 	const Component = React.lazy(importFn);
-	
+
 	return props => (
 		<Provider store={store}>
 			<React.Suspense fallback={<div>loading</div>}>
@@ -16,7 +16,9 @@ const lazy = (importFn, store) => {
 	);
 };
 
-const registerReactAsWebComponent = ({ namespace, name, importComponent, store }) => {
+const registerReactAsWebComponent = ({
+	namespace, name, importComponent, store,
+}) => {
 	class ReactWrapper extends HTMLElement {
 		connectedCallback() {
 			const shadow = this.attachShadow({ mode: 'open' });

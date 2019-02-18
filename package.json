@@ -7,6 +7,7 @@
         "start": "wsrun --exclude-missing start",
         "start:dev": "wsrun --exclude-missing start:dev",
         "start:ui": "wsrun --exclude-missing start:ui",
+        "lint": "wsrun --exclude-missing lint",
         "export:components": "wsrun --exclude-missing export:components"
     },
     "dependencies": {

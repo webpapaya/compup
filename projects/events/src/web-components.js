@@ -8,7 +8,6 @@ import Component0 from './container/event-create';
 import Component1 from './container/event-list';
 
 export default {
-  'event-create': () => ({ default: Component0 }),
-  'event-list': () => ({ default: Component1 })
+	'event-create': () => ({ default: Component0 }),
+	'event-list': () => ({ default: Component1 }),
 };
-
