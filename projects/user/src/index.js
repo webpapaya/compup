@@ -5,6 +5,6 @@ import {name as COMPONENT_PREFIX} from '../package.json';
 
 Object.keys(WEB_COMPONENTS).forEach((key) => {
 	const name = `${COMPONENT_PREFIX}--${key}`;
-	registerReactAsWebComponet({ store, name, importComponent: WEB_COMPONENTS[key] });
+	registerReactAsWebComponet({ store, namespace: COMPONENT_PREFIX, name, importComponent: WEB_COMPONENTS[key] });
 	console.info(`Registered: ${name}`);
 });

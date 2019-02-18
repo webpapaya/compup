@@ -11,10 +11,9 @@ Issues so far
     - still need to figure out a solution...
 - Routing for app shell 
     - need to find a routing library
-
+- Bundle splitting is complicated work... (path prefix needed or how to)
 
 # TODO:
-- Make regeneration webcomponent regeneration task generic
 - Add story source
 
 ```

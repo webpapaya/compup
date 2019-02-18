@@ -16,12 +16,12 @@ const lazy = (importFn, store) => {
 	);
 };
 
-const registerReactAsWebComponent = ({ name, importComponent, store }) => {
+const registerReactAsWebComponent = ({ namespace, name, importComponent, store }) => {
 	class ReactWrapper extends HTMLElement {
 		connectedCallback() {
 			const shadow = this.attachShadow({ mode: 'open' });
 			const importFn = () => Promise.resolve()
-				// .then(() => importCSS({ node: shadow, path: 'styles.css' }))
+				.then(() => importCSS({ node: shadow, path: window[`__${namespace}__styles_url`] || 'styles.css' }))
 				.then(() => importComponent());
 
 			const mountPoint = document.createElement('div');
