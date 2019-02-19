@@ -10,6 +10,7 @@ const rootReducer = combineReducers({
 	/* eslint-disable global-require */
 	events: require('./domain/events/reducer').default,
 	eventParticipations: require('./domain/event-participations/reducer').default,
+	selectedUsers: require('./domain/ui/selected-users').default,
 });
 
 const store = createStore(
