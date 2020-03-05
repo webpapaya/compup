@@ -14,7 +14,7 @@ const buildRepository = decorateWithRecordList(({
 
   const create = (connection, values) => Promise.resolve()
     .then(() => connection.post(url, decamelCaseKeys(values)))
-    .then(response => camelCaseKeys(response.data[0]));
+    .then(response => camelCaseKeys(response.data));
 
   const where = (connection, filter = {}) => {
     return Promise.resolve()
@@ -31,12 +31,12 @@ const buildRepository = decorateWithRecordList(({
   const update = (connection, filter, values = {}) => {
     return Promise.resolve()
     .then(() => connection.put(`${url}/${filter.where.id.value}`, decamelCaseKeys(values)))
-    .then(response => camelCaseKeys(response.data))
+    .then(response => camelCaseKeys([response.data]))
   };
 
   const destroy = (connection, filter) => Promise.resolve()
-    .then(() => connection.delete(`${url}/${filter.where.id.value}`))
-    .then(response => camelCaseKeys(response.data));
+    .then(ignoreReturnFor(() => connection.delete(`${url}/${filter.where.id.value}`)))
+    .then(() => [{ id: filter.where.id.value }]);
 
   const count = (connection, filter = {}) => Promise.resolve()
     .then(() => where(connection, filter))

@@ -28,12 +28,14 @@ const mergeProps = (state, actions) => ({
 	onDebtCreate: ({ userId, ...props }) => actions.onSubmit({
 		...props,
 		creditorId: userId,
-		debitorId: state.authenticatedUserId,
+		// TODO: remove hardcoded debitorId
+		debitorId: 1,
 	}),
 	onCreditCreate: ({ userId, ...props }) => actions.onSubmit({
 		...props,
-		debitorId: userId,
-		creditorId: state.authenticatedUserId,
+		debitorId: parseInt(userId),
+		// TODO: remove hardcoded creditorId
+		creditorId: 1,
 	}),
 });
 
