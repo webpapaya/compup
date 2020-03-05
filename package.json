@@ -16,7 +16,10 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"camelcase-keys-deep": "^0.1.0",
 		"datenkrake": "0.0.5",
+		"decamelize": "^4.0.0",
+		"decamelize-keys-deep": "^0.1.1",
 		"intl-messageformat": "^2.2.0",
 		"jwt-decode": "^2.2.0",
 		"promise-frites": "^0.10.0",

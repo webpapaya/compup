@@ -1,6 +1,6 @@
 
 import { memoize } from 'redux-memoize';
-import { buildRepository } from 'datenkrake/src/adapters/postgrest';
+import buildRepository from './rails-repository';
 import { cache } from '../lib/memoize-actions';
 import { connection } from './server-connection';
 
