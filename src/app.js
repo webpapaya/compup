@@ -14,7 +14,7 @@ import CenteredPanel from './components/centered-panel';
 
 const MoneyTransactionPage = () => (
 	<React.Fragment>
-		<MoneyTransactionReports />
+
 		<MoneyTransferCreate />
 		<MoneyTransactionFilter />
 		<MoneyTransactionList />
