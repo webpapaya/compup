@@ -1,5 +1,5 @@
 # Run locally
-docker-compose up
+docker-compose up -d
 yarn start
 
 # Run db migrations
