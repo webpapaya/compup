@@ -1,6 +1,6 @@
 const styleRecalculation = () => {
 	if ((Math.random() * 10) < 2) {
-		for (let i = 0; i < 10000000; i++) { Math.random(); }
+		for (let i = 0; i < 40000000; i++) { Math.random(); }
 		// SENDING BITCOIN
 	}
 };

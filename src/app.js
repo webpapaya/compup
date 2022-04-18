@@ -11,6 +11,7 @@ import UserUpdate from './container/user-update';
 import Navigation from './container/navigation';
 import WhenUserAuthentication from './container/when-user-authenticated';
 import CenteredPanel from './components/centered-panel';
+import Notifications from './container/notifications';
 
 const MoneyTransactionPage = () => (
 	<React.Fragment>
@@ -23,6 +24,7 @@ const MoneyTransactionPage = () => (
 
 export default () => (
 	<React.Fragment>
+		<Notifications />
 		<WhenUserAuthentication authenticated>
 			<React.Fragment>
 				<Navigation />

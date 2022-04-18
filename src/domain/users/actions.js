@@ -1,11 +1,14 @@
+import { rethrowError } from 'promise-frites';
 import buildRestActions from '../build-rest-actions';
+import { showNotification } from '../notifications/actions';
 import { connection } from '../server-connection';
 
 const REST_ACTIONS = buildRestActions({ resource: 'users' });
 
 const signIn = ({ email, password }) => dispatch => Promise.resolve()
 	.then(() => connection.post('rpc/user_sign_in', { email, pass: password }))
-	.then(({ data }) => dispatch({ type: '@USER/signedIn', payload: { token: data[0].token } }));
+	.then(({ data }) => dispatch({ type: '@USER/signedIn', payload: { token: data[0].token } }))
+	.catch(rethrowError(() => dispatch(showNotification({ text: 'Could not sign in' }))));
 
 const signOut = () => dispatch => Promise.resolve()
 	.then(() => dispatch({ type: 'reset' }));

@@ -1,0 +1,40 @@
+.container {
+	position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    margin: 10px;
+}
+
+.item {
+	position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    transform: translateX(calc(100% + 10px));
+    background: #FF4E08;
+    color: white;
+    padding: 10px 10px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+}
+
+.translate-in {
+    transition: transform 200ms;
+    transform: translateX(0);
+}
+
+.translate-out {
+    transition: 
+        transform 200ms, 
+        font-size 200ms 200ms,
+        padding 200ms 200ms,
+        margin 200ms 200ms;
+
+    transform: translateX(calc(100% + 10px));
+    font-size: 0;   
+    padding: 0;
+    margin: 0;
+    
+}
+
+
